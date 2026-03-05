@@ -1,80 +1,54 @@
-<div class="panel">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monolito - Sistema del Bar</title>
 
-  <button class="btn azul">
-    <div class="icono">🚚</div>
-    <div class="texto">PROVEEDORES</div>
-  </button>
+<style>
 
-  <button class="btn gris">
-    <div class="icono">📦</div>
-    <div class="texto">ARTÍCULOS</div>
-  </button>
-
-  <button class="btn gris">
-    <div class="icono">📊</div>
-    <div class="texto">COMPARADOR</div>
-  </button>
-
-  <button class="btn azul">
-    <div class="icono">📝</div>
-    <div class="texto">PEDIDOS</div>
-  </button>
-
-  <button class="btn naranja">
-    <div class="icono">⚠</div>
-    <div class="texto">A TENER EN CUENTA</div>
-  </button>
-
-  <button class="btn gris">
-    <div class="icono">⚙</div>
-    <div class="texto">CONFIGURACIÓN</div>
-  </button>
-
-  <button class="btn verde">
-    <div class="icono">🗂</div>
-    <div class="texto">HISTÓRICO PEDIDOS</div>
-  </button>
-
-  <button class="btn gris">
-    <div class="icono">💶</div>
-    <div class="texto">CAJA</div>
-  </button>
-
-  <button class="btn gris">
-    <div class="icono">📖</div>
-    <div class="texto">DIARIO DEL BAR</div>
-  </button>
-
-  <button class="btn gris">
-    <div class="icono">💰</div>
-    <div class="texto">PAGOS</div>
-  </button>
-
-</div><style>
-
-.panel{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  padding:30px;
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f0f0f0;
+display:flex;
+flex-direction:column;
+height:100vh;
 }
 
-.btn{
-  height:120px;
-  border-radius:10px;
-  border:none;
-  color:white;
-  font-weight:bold;
-  font-size:16px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+.header{
+background:#2c2c2c;
+color:white;
+padding:15px;
+font-size:20px;
+font-weight:bold;
+text-align:center;
+}
+
+.panel{
+flex:1;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+grid-auto-rows:1fr;
+gap:15px;
+padding:15px;
+}
+
+.boton{
+border-radius:12px;
+color:white;
+font-weight:bold;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-size:16px;
+text-align:center;
 }
 
 .icono{
-  font-size:36px;
-  margin-bottom:8px;
+font-size:36px;
+margin-bottom:8px;
 }
 
 .azul{background:#3b6ea8;}
@@ -82,4 +56,79 @@
 .naranja{background:#f18a2a;}
 .verde{background:#5fa84f;}
 
+.footer{
+background:#ffffff;
+padding:10px;
+text-align:center;
+font-size:14px;
+}
+
 </style>
+</head>
+
+<body>
+
+<div class="header">
+MONOLITO – Sistema del Bar
+</div>
+
+<div class="panel">
+
+<div class="boton azul">
+<div class="icono">🚚</div>
+PROVEEDORES
+</div>
+
+<div class="boton gris">
+<div class="icono">📦</div>
+ARTÍCULOS
+</div>
+
+<div class="boton gris">
+<div class="icono">📊</div>
+COMPARADOR
+</div>
+
+<div class="boton azul">
+<div class="icono">📝</div>
+PEDIDOS
+</div>
+
+<div class="boton naranja">
+<div class="icono">⚠</div>
+A TENER EN CUENTA
+</div>
+
+<div class="boton gris">
+<div class="icono">⚙</div>
+CONFIGURACIÓN
+</div>
+
+<div class="boton verde">
+<div class="icono">🗂</div>
+HISTÓRICO PEDIDOS
+</div>
+
+<div class="boton gris">
+<div class="icono">💶</div>
+CAJA
+</div>
+
+<div class="boton gris">
+<div class="icono">📖</div>
+DIARIO DEL BAR
+</div>
+
+<div class="boton gris">
+<div class="icono">💰</div>
+PAGOS
+</div>
+
+</div>
+
+<div class="footer">
+✉ Avisos del bar
+</div>
+
+</body>
+</html>
