@@ -1,135 +1,85 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Monolito – Sistema del Bar</title>
-
-<style>
-
-body{
-font-family: Arial, sans-serif;
-background:#f4f4f4;
-margin:0;
-text-align:center;
-}
-
-header{
-background:#222;
-color:white;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-#estado{
-background:#e8e8e8;
-padding:10px;
-font-size:14px;
-}
-
-.panel{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-padding:40px;
-max-width:900px;
-margin:auto;
-}
-
-.boton{
-background:white;
-border-radius:12px;
-padding:30px;
-font-size:18px;
-box-shadow:0 4px 8px rgba(0,0,0,0.2);
-cursor:pointer;
-transition:.2s;
-}
-
-.boton:hover{
-transform:scale(1.04);
-}
-
-footer{
-margin-top:20px;
-padding:15px;
-font-size:14px;
-}
-
-.herramientas{
-margin-top:10px;
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-
-<div>
-<b>MONOLITO – Sistema del Bar</b>
-</div>
-
-<div id="fechaHora"></div>
-
-</header>
-
-<div id="estado">
-Buenos días · Sin comunicaciones · Sin diferencias
-</div>
-
 <div class="panel">
 
-<div class="boton">Proveedores</div>
-<div class="boton">Artículos</div>
+  <button class="btn azul">
+    <div class="icono">🚚</div>
+    <div class="texto">PROVEEDORES</div>
+  </button>
 
-<div class="boton">Pedidos</div>
-<div class="boton">A tener en cuenta</div>
+  <button class="btn gris">
+    <div class="icono">📦</div>
+    <div class="texto">ARTÍCULOS</div>
+  </button>
 
-<div class="boton">Histórico pedidos</div>
-<div class="boton">Caja</div>
+  <button class="btn gris">
+    <div class="icono">📊</div>
+    <div class="texto">COMPARADOR</div>
+  </button>
 
-<div class="boton">Pagos</div>
-<div class="boton">Diario del bar</div>
+  <button class="btn azul">
+    <div class="icono">📝</div>
+    <div class="texto">PEDIDOS</div>
+  </button>
 
-<div class="boton">Comparador</div>
-<div class="boton">Configuración</div>
+  <button class="btn naranja">
+    <div class="icono">⚠</div>
+    <div class="texto">A TENER EN CUENTA</div>
+  </button>
 
-</div>
+  <button class="btn gris">
+    <div class="icono">⚙</div>
+    <div class="texto">CONFIGURACIÓN</div>
+  </button>
 
-<footer>
+  <button class="btn verde">
+    <div class="icono">🗂</div>
+    <div class="texto">HISTÓRICO PEDIDOS</div>
+  </button>
 
-<div>
-✉ Avisos del bar
-</div>
+  <button class="btn gris">
+    <div class="icono">💶</div>
+    <div class="texto">CAJA</div>
+  </button>
 
-<div class="herramientas">
-🔎 Buscar | 🖨 Imprimir | 📤 Compartir | ❓ Ayuda | ⛔ Salir
-</div>
+  <button class="btn gris">
+    <div class="icono">📖</div>
+    <div class="texto">DIARIO DEL BAR</div>
+  </button>
 
-</footer>
+  <button class="btn gris">
+    <div class="icono">💰</div>
+    <div class="texto">PAGOS</div>
+  </button>
 
-<script>
+</div><style>
 
-function actualizarHora(){
-
-let ahora = new Date();
-
-let fecha = ahora.toLocaleDateString("es-ES",{weekday:'short',day:'numeric',month:'short'});
-
-let hora = ahora.toLocaleTimeString("es-ES",{hour:'2-digit',minute:'2-digit'});
-
-document.getElementById("fechaHora").innerHTML = fecha + " · " + hora;
-
+.panel{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  padding:30px;
 }
 
-setInterval(actualizarHora,1000);
+.btn{
+  height:120px;
+  border-radius:10px;
+  border:none;
+  color:white;
+  font-weight:bold;
+  font-size:16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
 
-actualizarHora();
+.icono{
+  font-size:36px;
+  margin-bottom:8px;
+}
 
-</script>
+.azul{background:#3b6ea8;}
+.gris{background:#5b636a;}
+.naranja{background:#f18a2a;}
+.verde{background:#5fa84f;}
 
-</body>
-</html>
+</style>
