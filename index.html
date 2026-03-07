@@ -1,68 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
-<title>MONOLITO – Sistema del Bar</title>
+<title>Monolito GPT Pro</title>
 
 <style>
 
 body{
 font-family: Arial, Helvetica, sans-serif;
-background:#f2f2f2;
+background:#e9edf2;
 margin:0;
-padding:0;
 text-align:center;
 }
 
 .header{
-background:#222;
+background:#111;
 color:white;
-padding:14px;
+padding:18px;
+font-size:28px;
 font-weight:bold;
-display:flex;
-justify-content:center;
-align-items:center;
 }
 
-.container{
+.sub{
+font-size:14px;
+color:#ccc;
+}
+
+.panel{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:18px;
-padding:20px;
+gap:20px;
+padding:30px;
 max-width:900px;
 margin:auto;
 }
 
 .boton{
-border-radius:12px;
-color:white;
-font-weight:bold;
-padding:30px;
-cursor:pointer;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+border-radius:14px;
+padding:22px;
 font-size:18px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+box-shadow:0 6px 12px rgba(0,0,0,0.35);
 transition:0.15s;
-text-decoration:none;
 }
 
 .boton:active{
 transform:scale(0.95);
-filter:brightness(0.9);
 }
 
-.azul{background:#3c7ec4;}
-.gris{background:#5d666d;}
-.naranja{background:#e8892b;}
-.verde{background:#5cab4b;}
+.icono{
+font-size:38px;
+display:block;
+margin-bottom:8px;
+}
+
+.azul{
+background:linear-gradient(#5b8cc7,#2f5f8f);
+}
+
+.gris{
+background:linear-gradient(#7a858f,#4e5963);
+}
+
+.naranja{
+background:linear-gradient(#f1a53a,#d68018);
+}
+
+.verde{
+background:linear-gradient(#69b95f,#3c8b34);
+}
 
 .footer{
 margin-top:25px;
-color:#777;
+padding:15px;
 font-size:14px;
+color:#666;
 }
 
 </style>
@@ -71,61 +85,82 @@ font-size:14px;
 <body>
 
 <div class="header">
-MONOLITO – Sistema del Bar
+Monolito GPT Pro
+<div class="sub">Sistema del Bar</div>
 </div>
 
-<div class="container">
+<div class="panel">
 
-<a href="proveedores.html" class="boton azul">
-📦
+<div class="boton azul" onclick="abrir('proveedores')">
+<span class="icono">🚚</span>
 Proveedores
-</a>
+</div>
 
-<a href="articulos.html" class="boton gris">
-🍺
+<div class="boton gris" onclick="abrir('articulos')">
+<span class="icono">📦</span>
 Artículos
-</a>
-
-<div class="boton naranja">
-📝
-Pedidos
 </div>
 
-<div class="boton verde">
-💳
-Pagos proveedores
-</div>
-
-<div class="boton azul">
-⚠
-Incidencias
-</div>
-
-<div class="boton gris">
-📊
+<div class="boton azul" onclick="abrir('comparador')">
+<span class="icono">📊</span>
 Comparador precios
 </div>
 
-<div class="boton naranja">
-📅
+<div class="boton azul" onclick="abrir('pedidos')">
+<span class="icono">📝</span>
+Pedidos
+</div>
+
+<div class="boton naranja" onclick="abrir('avisos')">
+<span class="icono">⚠️</span>
+A tener en cuenta
+</div>
+
+<div class="boton gris" onclick="abrir('configuracion')">
+<span class="icono">⚙️</span>
+Configuración
+</div>
+
+<div class="boton verde" onclick="abrir('historico')">
+<span class="icono">📁</span>
+Histórico
+</div>
+
+<div class="boton azul" onclick="abrir('ventas')">
+<span class="icono">💰</span>
+Ventas
+</div>
+
+<div class="boton azul" onclick="abrir('pagos')">
+<span class="icono">🪙</span>
+Pagos proveedores
+</div>
+
+<div class="boton azul" onclick="abrir('calendario')">
+<span class="icono">📅</span>
 Calendario
 </div>
 
-<div class="boton verde">
-🔔
-Avisos
-</div>
-
-<div class="boton gris">
-⚙
-Configuración
+<div class="boton gris" onclick="abrir('comprobaciones')">
+<span class="icono">🔍</span>
+Comprobaciones
 </div>
 
 </div>
 
 <div class="footer">
-Monolito GPT Pro
+Monolito GPT Pro<br>
+por Javier Gion<br>
+IA ChatGPT
 </div>
+
+<script>
+
+function abrir(modulo){
+alert("Abrir módulo: " + modulo);
+}
+
+</script>
 
 </body>
 </html>
