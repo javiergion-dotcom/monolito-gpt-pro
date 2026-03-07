@@ -21,13 +21,8 @@ color:white;
 padding:14px;
 font-weight:bold;
 display:flex;
-justify-content:space-between;
+justify-content:center;
 align-items:center;
-}
-
-.header span{
-cursor:pointer;
-font-size:18px;
 }
 
 .container{
@@ -51,89 +46,7 @@ align-items:center;
 justify-content:center;
 font-size:18px;
 transition:0.15s;
+text-decoration:none;
 }
 
-.boton:active{
-transform:scale(0.95);
-filter:brightness(0.9);
-}
-
-.azul{background:#3c7ec4;}
-.gris{background:#5d666d;}
-.naranja{background:#e8892b;}
-.verde{background:#5cab4b;}
-
-.footer{
-margin-top:25px;
-color:#777;
-font-size:14px;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="header">
-<span onclick="volver()">⬅ Volver</span>
-<div>MONOLITO – Sistema del Bar</div>
-<span onclick="ayuda()">❓ Ayuda</span>
-</div>
-
-<div class="container">
-
-<div class="boton azul" onclick="abrir('proveedores')">
-📦
-Proveedores
-</div>
-
-<div class="boton gris" onclick="abrir('articulos')">
-🍺
-Artículos
-</div>
-
-<div class="boton naranja" onclick="abrir('pedidos')">
-📝
-Pedidos
-</div>
-
-<div class="boton verde" onclick="abrir('pagos')">
-💳
-Pagos proveedores
-</div>
-
-<div class="boton azul" onclick="abrir('incidencias')">
-⚠
-Incidencias
-</div>
-
-<div class="boton gris" onclick="abrir('comparador')">
-📊
-Comparador precios
-</div>
-
-<div class="boton naranja" onclick="abrir('calendario')">
-📅
-Calendario
-</div>
-
-<div class="boton verde" onclick="abrir('avisos')">
-🔔
-Avisos
-</div>
-
-<div class="boton gris" onclick="abrir('configuracion')">
-⚙
-Configuración
-</div>
-
-</div>
-
-<div class="footer">
-Monolito GPT Pro
-</div>
-
-<script>
-
-function abrir(seccion){
-alert("Abrir módulo: "
+.boton
