@@ -2,76 +2,68 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Monolito GPT Pro</title>
+<title>Monolito – Sistema del Bar</title>
 
 <style>
 
 body{
-margin:0;
-font-family:Arial, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 background:#f2f2f2;
+margin:0;
+padding:0;
+text-align:center;
 }
 
-/* barra superior */
-
-.topbar{
-position:fixed;
-top:0;
-left:0;
-right:0;
-height:50px;
-background:#111;
+.header{
+background:#222;
 color:white;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 15px;
-z-index:1000;
-}
-
-.topbar .title{
+padding:14px;
 font-weight:bold;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-/* panel principal */
+.header span{
+cursor:pointer;
+}
 
-.panel{
-margin-top:70px;
+.container{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:20px;
+gap:18px;
 padding:20px;
+max-width:1000px;
+margin:auto;
 }
 
 .boton{
-background:white;
-border-radius:10px;
-padding:25px;
-text-align:center;
+border-radius:12px;
+color:white;
 font-weight:bold;
-box-shadow:0 2px 6px rgba(0,0,0,0.2);
+padding:28px;
 cursor:pointer;
-transition:0.2s;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+transition:0.15s;
 }
 
-.boton:hover{
-transform:scale(1.05);
+.boton:active{
+transform:scale(0.95);
+filter:brightness(0.9);
 }
 
-/* ventana ayuda */
+.azul{background:#3c7ec4;}
+.gris{background:#5d666d;}
+.naranja{background:#e8892b;}
+.verde{background:#5cab4b;}
 
-.ayuda{
-display:none;
-position:fixed;
-top:80px;
-left:50%;
-transform:translateX(-50%);
-background:white;
-border:2px solid #333;
-padding:20px;
-width:320px;
-z-index:2000;
-box-shadow:0 0 10px rgba(0,0,0,0.4);
+.footer{
+margin-top:20px;
+color:#777;
+font-size:14px;
 }
 
 </style>
@@ -79,84 +71,8 @@ box-shadow:0 0 10px rgba(0,0,0,0.4);
 
 <body>
 
-<!-- barra superior -->
-
-<div class="topbar">
-
-<div onclick="history.back()" style="cursor:pointer;">
-⬅ Volver
-</div>
-
-<div class="title">
-MONOLITO GPT Pro – Javier Gión + IA ChatGPT
-</div>
-
-<div onclick="mostrarAyuda()" style="cursor:pointer;">
-❓ Ayuda
-</div>
-
-</div>
-
-<!-- panel principal -->
-
-<div class="panel">
-
-<div class="boton">🚚 PROVEEDORES</div>
-<div class="boton">📦 ARTÍCULOS</div>
-<div class="boton">📊 COMPARADOR</div>
-
-<div class="boton">📝 PEDIDOS</div>
-<div class="boton">⚠️ A TENER EN CUENTA</div>
-<div class="boton">⚙️ CONFIGURACIÓN</div>
-
-<div class="boton">📁 HISTÓRICO PEDIDOS</div>
-<div class="boton">💰 CAJA</div>
-<div class="boton">📖 DIARIO DEL BAR</div>
-
-<div class="boton">💵 PAGOS</div>
-
-</div>
-
-<!-- ventana ayuda -->
-
-<div id="ventanaAyuda" class="ayuda">
-
-<b>MONOLITO GPT Pro</b>
-
-<br><br>
-
-Este sistema está diseñado para controlar el funcionamiento del bar.
-
-<br><br>
-
-• Control de pedidos a proveedores  
-• Comparación de precios  
-• Registro de incidencias  
-• Control de caja  
-• Comunicación entre camareros  
-
-<br><br>
-
-El objetivo es que cualquier persona pueda pedir o pagar sin errores.
-
-<br><br>
-
-<button onclick="cerrarAyuda()">Cerrar</button>
-
-</div>
-
-<script>
-
-function mostrarAyuda(){
-document.getElementById("ventanaAyuda").style.display="block";
-}
-
-function cerrarAyuda(){
-document.getElementById("ventanaAyuda").style.display="none";
-}
-
-</script>
-
-</body>
-</html>
-
+<div class="header">
+<span>⬅ Volver</span>
+<div>MONOLITO – Sistema del Bar</div>
+<span>❓ Ayuda</span>
+</div
