@@ -1,201 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MONOLITO GPT Pro</title>
+<title>Monolito GPT Pro</title>
 
 <style>
 
 body{
-font-family: Arial, Helvetica, sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 background:#f2f2f2;
 margin:0;
 padding:0;
 text-align:center;
 }
 
-/* CABECERA */
-
 .header{
-background:#222;
+background:#1f1f1f;
 color:white;
-padding:18px;
-font-weight:bold;
+padding:15px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-font-size:18px;
+font-weight:bold;
+font-size:20px;
 }
-
-.header span{
-cursor:pointer;
-}
-
-/* CONTENEDOR BOTONES */
 
 .container{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:16px;
-padding:16px;
-max-width:650px;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:30px;
+max-width:1000px;
 margin:auto;
 }
 
-/* BOTONES */
-
 .boton{
 border-radius:14px;
-color:white;
-font-weight:bold;
-padding:35px;
+padding:30px;
 font-size:18px;
+font-weight:bold;
+color:white;
 cursor:pointer;
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
-transition:0.15s;
+align-items:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 .boton:active{
 transform:scale(0.95);
-filter:brightness(0.9);
 }
 
 .azul{background:#3c7ec4;}
-.gris{background:#5d666d;}
+.gris{background:#6b737a;}
 .naranja{background:#e8892b;}
 .verde{background:#5cab4b;}
 
-/* PIE */
-
 .footer{
-margin-top:20px;
-color:#777;
+margin-top:30px;
 font-size:14px;
-padding-bottom:20px;
+color:#666;
+}
+
+.pantalla{
+display:none;
+padding:40px;
+font-size:22px;
 }
 
 </style>
+
+<script>
+
+function abrirPantalla(id){
+
+document.getElementById("menu").style.display="none"
+
+let pantallas=document.getElementsByClassName("pantalla")
+
+for(let i=0;i<pantallas.length;i++){
+pantallas[i].style.display="none"
+}
+
+document.getElementById(id).style.display="block"
+
+}
+
+function volverMenu(){
+
+document.getElementById("menu").style.display="grid"
+
+let pantallas=document.getElementsByClassName("pantalla")
+
+for(let i=0;i<pantallas.length;i++){
+pantallas[i].style.display="none"
+}
+
+}
+
+</script>
+
 </head>
 
 <body>
 
 <div class="header">
-<span onclick="volver()">⬅ Volver</span>
+<div onclick="volverMenu()">⬅ Volver</div>
 <div>MONOLITO GPT Pro</div>
-<span onclick="alert('Sistema de control del bar')">❓ Ayuda</span>
+<div>❓ Ayuda</div>
 </div>
 
-<div class="container">
+<div id="menu" class="container">
 
-<div class="boton azul" onclick="abrirProveedores()">🚚 PROVEEDORES</div>
+<div class="boton azul" onclick="abrirPantalla('proveedores')">PROVEEDORES</div>
+<div class="boton gris" onclick="abrirPantalla('articulos')">ARTÍCULOS</div>
+<div class="boton naranja" onclick="abrirPantalla('comparador')">COMPARADOR</div>
 
-<div class="boton gris" onclick="abrirArticulos()">📦 ARTÍCULOS</div>
+<div class="boton azul" onclick="abrirPantalla('pedidos')">PEDIDOS</div>
+<div class="boton azul" onclick="abrirPantalla('pagos')">PAGOS</div>
+<div class="boton gris" onclick="abrirPantalla('configuracion')">CONFIGURACIÓN</div>
 
-<div class="boton azul" onclick="abrirPedidos()">📝 PEDIDOS</div>
+<div class="boton verde" onclick="abrirPantalla('historico')">HISTÓRICO</div>
+<div class="boton azul" onclick="abrirPantalla('calendario')">CALENDARIO</div>
+<div class="boton naranja" onclick="abrirPantalla('incidencias')">INCIDENCIAS</div>
 
-<div class="boton verde" onclick="abrirHistorico()">📁 HISTÓRICO</div>
-
-<div class="boton gris" onclick="abrirComparador()">📊 COMPARADOR</div>
-
-<div class="boton gris" onclick="abrirConfiguracion()">⚙ CONFIGURACIÓN</div>
-
-<div class="boton gris" onclick="abrirVentas()">💶 VENTAS</div>
-
-<div class="boton gris" onclick="abrirDiario()">📖 DIARIO</div>
+<div class="boton naranja" onclick="abrirPantalla('avisos')">AVISOS</div>
 
 </div>
+
+<div id="proveedores" class="pantalla">Pantalla de PROVEEDORES</div>
+
+<div id="articulos" class="pantalla">Pantalla de ARTÍCULOS</div>
+
+<div id="comparador" class="pantalla">Pantalla COMPARADOR DE PRECIOS</div>
+
+<div id="pedidos" class="pantalla">Pantalla de PEDIDOS</div>
+
+<div id="pagos" class="pantalla">Pantalla PAGOS PROVEEDORES</div>
+
+<div id="configuracion" class="pantalla">Pantalla CONFIGURACIÓN</div>
+
+<div id="historico" class="pantalla">Pantalla HISTÓRICO PEDIDOS</div>
+
+<div id="calendario" class="pantalla">Pantalla CALENDARIO</div>
+
+<div id="incidencias" class="pantalla">Pantalla INCIDENCIAS</div>
+
+<div id="avisos" class="pantalla">Pantalla AVISOS</div>
 
 <div class="footer">
-Monolito GPT Pro — Javier Gión + IA ChatGPT
+Monolito GPT Pro — Javier Gión & IA ChatGPT
 </div>
-
-<script>
-
-/* VOLVER */
-
-let salir=false;
-
-function volver(){
-
-if(!salir){
-alert("Pulsa volver otra vez para cerrar el programa");
-salir=true;
-
-setTimeout(function(){
-salir=false;
-},2000);
-
-}else{
-location.reload();
-}
-
-}
-
-/* PROVEEDORES */
-
-function abrirProveedores(){
-
-document.body.innerHTML=`
-
-<div class="header">
-<span onclick="location.reload()">⬅ Volver</span>
-<div>PROVEEDORES</div>
-<span>❓</span>
-</div>
-
-<div style="padding:20px">
-
-<h2>Nuevo proveedor</h2>
-
-<input placeholder="Nombre proveedor" style="width:90%;padding:12px;margin:6px">
-
-<input placeholder="Teléfono" style="width:90%;padding:12px;margin:6px">
-
-<input placeholder="Día de pedido" style="width:90%;padding:12px;margin:6px">
-
-<input placeholder="Día de reparto" style="width:90%;padding:12px;margin:6px">
-
-<select style="width:90%;padding:12px;margin:6px">
-<option>Forma de pago</option>
-<option>Reposición</option>
-<option>Contado</option>
-<option>Banco</option>
-<option>Entrega a cuenta</option>
-</select>
-
-<button style="width:90%;padding:16px;margin-top:12px;background:#3c7ec4;color:white;border:none;border-radius:8px;font-size:16px">
-Guardar proveedor
-</button>
-
-</div>
-
-`;
-
-}
-
-/* PANTALLAS VACÍAS */
-
-function abrirArticulos(){alert("Módulo artículos");}
-
-function abrirPedidos(){alert("Módulo pedidos");}
-
-function abrirHistorico(){alert("Módulo histórico");}
-
-function abrirComparador(){alert("Módulo comparador");}
-
-function abrirConfiguracion(){alert("Módulo configuración");}
-
-function abrirVentas(){alert("Módulo ventas");}
-
-function abrirDiario(){alert("Módulo diario");}
-
-</script>
 
 </body>
 </html>
