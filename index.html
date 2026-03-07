@@ -2,65 +2,76 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monolito - Sistema del Bar</title>
+<title>Monolito GPT Pro</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f0f0f0;
-display:flex;
-flex-direction:column;
-height:100vh;
+font-family:Arial, sans-serif;
+background:#f2f2f2;
 }
 
-.header{
-background:#2c2c2c;
+/* barra superior */
+
+.topbar{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:50px;
+background:#111;
 color:white;
-padding:15px;
-font-size:20px;
-font-weight:bold;
-text-align:center;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 15px;
+z-index:1000;
 }
+
+.topbar .title{
+font-weight:bold;
+}
+
+/* panel principal */
 
 .panel{
-flex:1;
+margin-top:70px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
-grid-auto-rows:1fr;
-gap:15px;
-padding:15px;
+gap:20px;
+padding:20px;
 }
 
 .boton{
-border-radius:12px;
-color:white;
+background:white;
+border-radius:10px;
+padding:25px;
+text-align:center;
 font-weight:bold;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-font-size:16px;
-text-align:center;
+box-shadow:0 2px 6px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:0.2s;
 }
 
-.icono{
-font-size:36px;
-margin-bottom:8px;
+.boton:hover{
+transform:scale(1.05);
 }
 
-.azul{background:#3b6ea8;}
-.gris{background:#5b636a;}
-.naranja{background:#f18a2a;}
-.verde{background:#5fa84f;}
+/* ventana ayuda */
 
-.footer{
-background:#ffffff;
-padding:10px;
-text-align:center;
-font-size:14px;
+.ayuda{
+display:none;
+position:fixed;
+top:80px;
+left:50%;
+transform:translateX(-50%);
+background:white;
+border:2px solid #333;
+padding:20px;
+width:320px;
+z-index:2000;
+box-shadow:0 0 10px rgba(0,0,0,0.4);
 }
 
 </style>
@@ -68,112 +79,84 @@ font-size:14px;
 
 <body>
 
-<div class="header">
-MONOLITO – Sistema del Bar
+<!-- barra superior -->
+
+<div class="topbar">
+
+<div onclick="history.back()" style="cursor:pointer;">
+⬅ Volver
 </div>
+
+<div class="title">
+MONOLITO GPT Pro – Javier Gión + IA ChatGPT
+</div>
+
+<div onclick="mostrarAyuda()" style="cursor:pointer;">
+❓ Ayuda
+</div>
+
+</div>
+
+<!-- panel principal -->
 
 <div class="panel">
 
-<div class="boton azul">
-<div class="icono">🚚</div>
-PROVEEDORES
-</div>
+<div class="boton">🚚 PROVEEDORES</div>
+<div class="boton">📦 ARTÍCULOS</div>
+<div class="boton">📊 COMPARADOR</div>
 
-<div class="boton gris">
-<div class="icono">📦</div>
-ARTÍCULOS
-</div>
+<div class="boton">📝 PEDIDOS</div>
+<div class="boton">⚠️ A TENER EN CUENTA</div>
+<div class="boton">⚙️ CONFIGURACIÓN</div>
 
-<div class="boton gris">
-<div class="icono">📊</div>
-COMPARADOR
-</div>
+<div class="boton">📁 HISTÓRICO PEDIDOS</div>
+<div class="boton">💰 CAJA</div>
+<div class="boton">📖 DIARIO DEL BAR</div>
 
-<div class="boton azul">
-<div class="icono">📝</div>
-PEDIDOS
-</div>
-
-<div class="boton naranja">
-<div class="icono">⚠</div>
-A TENER EN CUENTA
-</div>
-
-<div class="boton gris">
-<div class="icono">⚙</div>
-CONFIGURACIÓN
-</div>
-
-<div class="boton verde">
-<div class="icono">🗂</div>
-HISTÓRICO PEDIDOS
-</div>
-
-<div class="boton gris">
-<div class="icono">💶</div>
-CAJA
-</div>
-
-<div class="boton gris">
-<div class="icono">📖</div>
-DIARIO DEL BAR
-</div>
-
-<div class="boton gris">
-<div class="icono">💰</div>
-PAGOS
-</div>
+<div class="boton">💵 PAGOS</div>
 
 </div>
 
-<div class="footer">
-✉ Avisos del bar
+<!-- ventana ayuda -->
+
+<div id="ventanaAyuda" class="ayuda">
+
+<b>MONOLITO GPT Pro</b>
+
+<br><br>
+
+Este sistema está diseñado para controlar el funcionamiento del bar.
+
+<br><br>
+
+• Control de pedidos a proveedores  
+• Comparación de precios  
+• Registro de incidencias  
+• Control de caja  
+• Comunicación entre camareros  
+
+<br><br>
+
+El objetivo es que cualquier persona pueda pedir o pagar sin errores.
+
+<br><br>
+
+<button onclick="cerrarAyuda()">Cerrar</button>
+
 </div>
 
-</body><div class="topbar">
+<script>
 
-<div class="circulo amarillo">
-✉
-<span>Comunicaciones</span>
-</div>
-
-<div class="circulo rojo">
-⚠
-<span>Incidencias</span>
-</div>
-
-</div>
-</html>.topbar{
-display:flex;
-justify-content:flex-end;
-gap:20px;
-padding:10px 20px;
+function mostrarAyuda(){
+document.getElementById("ventanaAyuda").style.display="block";
 }
 
-.circulo{
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:20px;
-position:relative;
+function cerrarAyuda(){
+document.getElementById("ventanaAyuda").style.display="none";
 }
 
-.circulo span{
-position:absolute;
-top:70px;
-font-size:12px;
-color:#333;
-}
+</script>
 
-.amarillo{
-background:#f1c40f;
-}
+</body>
+</html>
 
-.rojo{
-background:#e74c3c;
-}
