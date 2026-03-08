@@ -1,183 +1,172 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
-<title>Monolito GPT Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MONOLITO</title>
 
 <style>
 
 body{
 font-family: Arial, Helvetica, sans-serif;
-background:#e9edf2;
+background:#f2f2f2;
 margin:0;
 text-align:center;
 }
 
-.header{
-background:#111;
-color:white;
-padding:18px;
-font-size:28px;
-font-weight:bold;
+.topbar{
+display:flex;
+justify-content:space-between;
+padding:10px 20px;
+font-size:20px;
 }
 
-.sub{
-font-size:14px;
-color:#ccc;
+.topbar span{
+cursor:pointer;
+}
+
+h1{
+margin:5px 0 10px 0;
+font-size:32px;
 }
 
 .panel{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:30px;
+grid-template-columns: repeat(3, 1fr);
+gap:12px;
+width:92%;
 max-width:900px;
 margin:auto;
 }
 
 .boton{
-border-radius:14px;
-padding:22px;
-font-size:18px;
-font-weight:bold;
+background:#4CAF50;
 color:white;
+padding:20px;
+font-size:18px;
+border-radius:12px;
 cursor:pointer;
-box-shadow:0 6px 12px rgba(0,0,0,0.35);
-transition:0.15s;
-}
-
-.boton:active{
-transform:scale(0.95);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+box-shadow:0 4px 6px rgba(0,0,0,0.2);
 }
 
 .icono{
-font-size:38px;
-display:block;
-margin-bottom:8px;
+font-size:32px;
+margin-bottom:5px;
 }
 
-.azul{
-background:linear-gradient(#5b8cc7,#2f5f8f);
+.pagos{
+grid-column:2;
+background:#333;
 }
 
-.gris{
-background:linear-gradient(#7a858f,#4e5963);
-}
-
-.naranja{
-background:linear-gradient(#f1a53a,#d68018);
-}
-
-.verde{
-background:linear-gradient(#69b95f,#3c8b34);
-}
-
-.footer{
-margin-top:25px;
+.avisos{
+background:white;
+margin:15px auto;
 padding:15px;
-font-size:14px;
-color:#666;
+border-radius:10px;
+width:92%;
+max-width:900px;
+text-align:left;
+}
+
+.bottombar{
+display:flex;
+justify-content:space-around;
+margin-top:10px;
+font-size:20px;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<div class="header">
-Monolito GPT Pro
-<div class="sub">Sistema del Bar</div>
+<div class="topbar">
+<span>← Volver</span>
+<span>❓ Ayuda</span>
 </div>
+
+<h1>MONOLITO</h1>
+
 
 <div class="panel">
 
-<div class="boton azul" onclick="abrir('proveedores')">
-<span class="icono">🚚</span>
-Proveedores
+<div class="boton">
+<div class="icono">🏢</div>
+PROVEEDORES
 </div>
 
-<div class="boton gris" onclick="abrir('articulos')">
-<span class="icono">📦</span>
-Artículos
+<div class="boton">
+<div class="icono">📦</div>
+ARTÍCULOS
 </div>
 
-<div class="boton azul" onclick="abrir('comparador')">
-<span class="icono">📊</span>
-Comparador precios
+<div class="boton">
+<div class="icono">📊</div>
+COMPARADOR
 </div>
 
-<div class="boton azul" onclick="abrir('pedidos')">
-<span class="icono">📝</span>
-Pedidos
+<div class="boton">
+<div class="icono">📝</div>
+PEDIDOS
 </div>
 
-<div class="boton naranja" onclick="abrir('avisos')">
-<span class="icono">⚠️</span>
-A tener en cuenta
+<div class="boton">
+<div class="icono">⚠</div>
+A TENER EN CUENTA
 </div>
 
-<div class="boton gris" onclick="abrir('configuracion')">
-<span class="icono">⚙️</span>
-Configuración
+<div class="boton">
+<div class="icono">⚙</div>
+CONFIGURACIÓN
 </div>
 
-<div class="boton verde" onclick="abrir('historico')">
-<span class="icono">📁</span>
-Histórico
+<div class="boton">
+<div class="icono">📚</div>
+HISTÓRICO
 </div>
 
-<div class="boton azul" onclick="abrir('ventas')">
-<span class="icono">💰</span>
-Ventas
+<div class="boton">
+<div class="icono">💰</div>
+CAJA
 </div>
 
-<div class="boton azul" onclick="abrir('pagos')">
-<span class="icono">🪙</span>
-Pagos proveedores
+<div class="boton">
+<div class="icono">📖</div>
+DIARIO
 </div>
 
-<div class="boton azul" onclick="abrir('calendario')">
-<span class="icono">📅</span>
-Calendario
-</div>
-
-<div class="boton gris" onclick="abrir('comprobaciones')">
-<span class="icono">🔍</span>
-Comprobaciones
+<div class="boton pagos">
+<div class="icono">💳</div>
+PAGOS
 </div>
 
 </div>
 
-<div class="footer">
-Monolito GPT Pro<br>
-por Javier Gion<br>
-IA ChatGPT
+
+<div class="avisos">
+
+<h3>AVISOS DEL BAR</h3>
+
+<p>• Oferta Rioja Meles León pendiente revisar</p>
+<p>• Incidencia proveedor Turado pendiente</p>
+
 </div>
 
-<script>
 
-function abrir(modulo){
-alert("Abrir módulo: " + modulo);
-}
+<div class="bottombar">
+<span>⚠ Incidencias</span>
+<span>💬 Comunicaciones</span>
+</div>
 
-</script>
 
 </body>
-</html><!-- cambio -->
-
-<header style="background:#111;color:white;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:20px;">
-
-<div>
-<button onclick="history.back()" style="font-size:20px;">⬅</button>
-</div>
-
-<div style="font-weight:bold;">
-MONOLITO GPT PRO
-</div>
-
-<div>
-<button style="font-size:20px;">🔍</button>
-<button style="font-size:20px;">❓</button>
-</div>
-
-</header>
+</html>
