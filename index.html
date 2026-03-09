@@ -7,42 +7,53 @@
 <style>
 
 body{
-font-family: Arial, sans-serif;
-background:#f4f4f4;
-text-align:center;
+font-family:Arial;
+background:#e5e5e5;
 margin:0;
-padding:0;
+text-align:center;
 }
 
-h1{
+header{
 background:#222;
 color:white;
 padding:20px;
-margin:0;
+font-size:28px;
 }
 
-h2{
-margin-top:30px;
-color:#333;
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:30px;
+max-width:900px;
+margin:auto;
 }
 
-.panel{
-margin:20px;
-}
-
-button{
-padding:15px 25px;
-margin:10px;
-font-size:16px;
-border:none;
-border-radius:8px;
-background:#2e7d32;
+.boton{
+padding:30px;
+border-radius:10px;
 color:white;
+font-size:18px;
 cursor:pointer;
+box-shadow:0 4px 8px rgba(0,0,0,0.2);
 }
 
-button:hover{
-background:#1b5e20;
+.proveedores{background:#2e6da4;}
+.articulos{background:#555;}
+.comparador{background:#666;}
+
+.pedidos{background:#3a7bd5;}
+.alerta{background:#f39c12;}
+.config{background:#777;}
+
+.historico{background:#4caf50;}
+.caja{background:#444;}
+.diario{background:#555;}
+
+.pagos{background:#444;}
+
+.boton:hover{
+transform:scale(1.05);
 }
 
 </style>
@@ -50,30 +61,49 @@ background:#1b5e20;
 
 <body>
 
-<h1>MONOLITO</h1>
+<header>MONOLITO</header>
 
-<div class="panel">
+<div class="grid">
 
-<h2>OPERATIVA</h2>
+<div class="boton proveedores" onclick="location.href='proveedores.html'">
+PROVEEDORES
+</div>
 
-<button onclick="location.href='proveedores.html'">Proveedores</button>
-<button onclick="location.href='articulos.html'">Artículos</button>
-<button onclick="location.href='pedidos.html'">Pedidos</button>
+<div class="boton articulos" onclick="location.href='articulos.html'">
+ARTÍCULOS
+</div>
 
-<h2>CONTROL</h2>
+<div class="boton comparador">
+COMPARADOR
+</div>
 
-<button onclick="location.href='caja.html'">Caja</button>
-<button onclick="location.href='diario.html'">Diario</button>
-<button onclick="location.href='pagos.html'">Pagos</button>
+<div class="boton pedidos">
+PEDIDOS
+</div>
 
-<h2>ANÁLISIS</h2>
+<div class="boton alerta">
+A TENER EN CUENTA
+</div>
 
-<button onclick="location.href='comparador.html'">Comparador</button>
-<button onclick="location.href='historico.html'">Histórico</button>
+<div class="boton config">
+CONFIGURACIÓN
+</div>
 
-<h2>SISTEMA</h2>
+<div class="boton historico">
+HISTÓRICO
+</div>
 
-<button onclick="location.href='configuracion.html'">Configuración</button>
+<div class="boton caja">
+CAJA
+</div>
+
+<div class="boton diario">
+DIARIO
+</div>
+
+<div class="boton pagos">
+PAGOS
+</div>
 
 </div>
 
