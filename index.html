@@ -7,110 +7,117 @@
 <style>
 
 :root {
-    --bg-body: #e0e0e0;
-    --header-bg: #1a252f;
-    --btn-blue: linear-gradient(to bottom, #4a90e2, #357abd);
-    --btn-grey: linear-gradient(to bottom, #7f8c8d, #5d6d7e);
-    --btn-green: linear-gradient(to bottom, #76a04d, #558b2f);
-    --btn-orange: linear-gradient(to bottom, #f39c12, #d35400);
-    --btn-dark: linear-gradient(to bottom, #546e7a, #37474f);
+    --bg-body:#e0e0e0;
+    --header-bg:#1a252f;
+    --btn-blue:linear-gradient(to bottom,#4a90e2,#357abd);
+    --btn-grey:linear-gradient(to bottom,#7f8c8d,#5d6d7e);
+    --btn-green:linear-gradient(to bottom,#76a04d,#558b2f);
+    --btn-orange:linear-gradient(to bottom,#f39c12,#d35400);
+    --btn-dark:linear-gradient(to bottom,#546e7a,#37474f);
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-body);
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body{
+font-family:'Segoe UI',Tahoma;
+background:var(--bg-body);
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
 
-/* CONTENEDOR TABLET */
+/* TABLET */
 
-.tablet-container {
-    width: 900px;
-    background: #fdfdfd;
-    border: 20px solid #111;
-    border-radius: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    overflow: hidden;
-    position: relative;
+.tablet-container{
+width:900px;
+background:#fff;
+border:20px solid #111;
+border-radius:40px;
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+overflow:hidden;
 }
 
-/* BARRA SUPERIOR */
+/* HEADER */
 
-header {
-    background-color: var(--header-bg);
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
+header{
+background:var(--header-bg);
+color:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+font-size:20px;
+font-weight:bold;
 }
 
 /* GRID BOTONES */
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    padding: 30px;
-    background: #f0f2f5;
+.grid-container{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+padding:30px;
+background:#f0f2f5;
 }
 
 /* BOTONES */
 
-.btn {
-    height: 135px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.95rem;
-    text-align: center;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.35),
-                inset 0 1px 1px rgba(255,255,255,0.3);
-    transition: transform 0.08s ease,
-                box-shadow 0.08s ease;
-    cursor: pointer;
+.btn{
+height:135px;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+font-weight:bold;
+text-transform:uppercase;
+font-size:14px;
+box-shadow:0 8px 16px rgba(0,0,0,.35);
+cursor:pointer;
+position:relative;
 }
 
-.btn span {
-    font-size: 2.6rem;
-    margin-bottom: 10px;
+.btn span{
+font-size:36px;
+margin-bottom:8px;
 }
 
-.btn:active {
-    transform: scale(0.94);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.35);
+.btn:active{
+transform:scale(.94);
+}
+
+/* CONTADOR */
+
+.badge{
+position:absolute;
+top:12px;
+right:18px;
+background:red;
+color:white;
+font-size:12px;
+border-radius:50%;
+padding:3px 7px;
 }
 
 /* COLORES */
 
-.blue   { background: var(--btn-blue); }
-.grey   { background: var(--btn-grey); }
-.orange { background: var(--btn-orange); }
-.green  { background: var(--btn-green); }
-.dark   { background: var(--btn-dark); }
+.blue{background:var(--btn-blue);}
+.grey{background:var(--btn-grey);}
+.orange{background:var(--btn-orange);}
+.green{background:var(--btn-green);}
+.dark{background:var(--btn-dark);}
 
 /* AVISOS */
 
-.footer-status {
-    background-color: #2c3e50;
-    color: white;
-    padding: 12px 22px;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    border-radius: 6px;
-    font-size: 0.9rem;
+.footer-status{
+background:#2c3e50;
+color:white;
+padding:10px 20px;
+position:absolute;
+bottom:20px;
+right:20px;
+border-radius:4px;
+font-size:12px;
 }
 
 </style>
@@ -121,30 +128,42 @@ header {
 <div class="tablet-container">
 
 <header>
-<div><strong>MONOLITO</strong> – Sistema del Bar</div>
-<div>Martes • 12 marzo • 10:42</div>
+MONOLITO – Sistema del Bar
+<span>Martes • 12 marzo</span>
 </header>
 
 <main class="grid-container">
 
 <div class="btn blue"><span>🚚</span>PROVEEDORES</div>
+
 <div class="btn grey"><span>📋</span>ARTÍCULOS</div>
+
 <div class="btn grey"><span>📊</span>COMPARADOR</div>
 
 <div class="btn blue"><span>📝</span>PEDIDOS</div>
+
 <div class="btn orange"><span>⚠️</span>A TENER EN CUENTA</div>
+
 <div class="btn grey"><span>⚙️</span>CONFIGURACIÓN</div>
 
 <div class="btn green"><span>📂</span>HISTÓRICO</div>
-<div class="btn grey"><span>📠</span>CAJA</div>
+
+<div class="btn grey"><span>💰</span>CAJA</div>
+
 <div class="btn grey"><span>📅</span>CALENDARIO</div>
 
-<div class="btn dark"><span>💰</span>PAGOS</div>
+<div class="btn orange">
+<span>✉️</span>
+<span class="badge">3</span>
+COMUNICACIÓN INTERNA
+</div>
+
+<div class="btn dark"><span>💳</span>PAGOS</div>
 
 </main>
 
 <div class="footer-status">
-📩 AVISOS DEL BAR (2)
+📩 AVISOS DEL BAR
 </div>
 
 </div>
