@@ -1,17 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Monolito</title>
-
-<!-- MODO APP -->
-<meta name="theme-color" content="#1f2c34">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MONOLITO</title>
 
 <style>
 
@@ -21,114 +13,141 @@ font-family:Segoe UI;
 background:#e6e6e6;
 }
 
-header{
+.topbar{
 background:#1f2c34;
 color:white;
-padding:12px;
+padding:14px;
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 font-size:18px;
 }
 
-.header-icons span{
-margin-left:18px;
+.iconos{
+display:flex;
+gap:18px;
 font-size:20px;
-cursor:pointer;
 }
 
 .grid{
+padding:16px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+grid-template-columns:1fr 1fr;
 gap:16px;
-padding:18px;
 }
 
 .btn{
-background:#6e7b83;
-color:white;
-border-radius:16px;
-height:110px;
+height:120px;
+border-radius:18px;
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
+color:white;
 font-weight:600;
-font-size:15px;
+font-size:18px;
 box-shadow:0 6px 14px rgba(0,0,0,0.25);
 position:relative;
 }
 
-.blue{background:#5b86b3;}
-.green{background:#6aa84f;}
-.orange{background:#f39c12;}
-.dark{background:#455a64;}
+.azul{background:linear-gradient(#5d8db8,#3e6f99);}
+.gris{background:linear-gradient(#7c8b92,#5f6d73);}
+.verde{background:linear-gradient(#6aa84f,#4e7d36);}
+.naranja{background:linear-gradient(#f6a623,#d98200);}
+.oscuro{background:linear-gradient(#546e7a,#37474f);}
 
-.icon{
+.icono{
 font-size:34px;
-margin-bottom:6px;
+margin-bottom:8px;
 }
 
 .badge{
 position:absolute;
-top:8px;
-right:10px;
+top:10px;
+right:12px;
 background:white;
-color:#f39c12;
-width:26px;
-height:26px;
+color:#d98200;
+width:28px;
+height:28px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-weight:bold;
+font-weight:700;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>
-
-<div><b>MONOLITO</b></div>
-
-<div class="header-icons">
-<span>⚠️</span>
-<span>🔍</span>
-<span>❓</span>
-<span>↩</span>
+<div class="topbar">
+<div>MONOLITO</div>
+<div class="iconos">
+⚠️ 🔎 ❓ ↩️
 </div>
-
-</header>
+</div>
 
 <div class="grid">
 
-<div class="btn blue"><div class="icon">🚚</div>PROVEEDORES</div>
-<div class="btn"><div class="icon">📋</div>ARTÍCULOS</div>
-<div class="btn"><div class="icon">📊</div>COMPARADOR</div>
+<div class="btn azul">
+<div class="icono">🚚</div>
+PROVEEDORES
+</div>
 
-<div class="btn blue"><div class="icon">📝</div>PEDIDOS</div>
-<div class="btn orange"><div class="icon">🔎</div>REVISIÓN</div>
-<div class="btn"><div class="icon">⚙️</div>CONFIGURACIÓN</div>
+<div class="btn gris">
+<div class="icono">📋</div>
+ARTÍCULOS
+</div>
 
-<div class="btn green"><div class="icon">📂</div>HISTÓRICO</div>
-<div class="btn"><div class="icon">💰</div>VENTAS</div>
-<div class="btn"><div class="icon">📅</div>CALENDARIO</div>
+<div class="btn gris">
+<div class="icono">📊</div>
+COMPARADOR
+</div>
 
-<div class="btn orange">
+<div class="btn azul">
+<div class="icono">📝</div>
+PEDIDOS
+</div>
+
+<div class="btn naranja">
+<div class="icono">🔎</div>
+REVISIÓN
+</div>
+
+<div class="btn gris">
+<div class="icono">⚙️</div>
+CONFIGURACIÓN
+</div>
+
+<div class="btn verde">
+<div class="icono">📂</div>
+HISTÓRICO
+</div>
+
+<div class="btn gris">
+<div class="icono">💰</div>
+VENTAS
+</div>
+
+<div class="btn gris">
+<div class="icono">📅</div>
+CALENDARIO
+</div>
+
+<div class="btn naranja">
 <div class="badge">3</div>
-<div class="icon">✉️</div>
+<div class="icono">✉️</div>
 COMUNICACIÓN
 </div>
 
-<div class="btn dark"><div class="icon">💳</div>PAGOS</div>
+<div class="btn oscuro">
+<div class="icono">💳</div>
+PAGOS
+</div>
 
 </div>
 
 </body>
 </html>
-
-
 
