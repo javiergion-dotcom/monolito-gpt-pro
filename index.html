@@ -4,28 +4,13 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>MONOLITO - Sistema del Bar</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="theme-color" content="#1e2a33">
-
-<link rel="manifest" href="manifest.json">
-
-<link rel="icon" href="icono-monolito.png">
-<link rel="apple-touch-icon" href="icono-monolito.png">
-
 <style>
 
-body{<div id="splash">
-<h1>MONOLITO</h1>
-<p>Sistema del Bar</p>
-</div>
+body{
 font-family:Segoe UI,Arial;
 background:#d9d9d9;
 margin:0;
@@ -35,6 +20,31 @@ align-items:center;
 height:100vh;
 }
 
+/* SPLASH */
+
+#splash{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#1e2a33;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+font-size:32px;
+}
+
+#splash p{
+font-size:18px;
+opacity:0.8;
+}
+
+/* TABLET */
+
 .tablet{
 width:950px;
 background:white;
@@ -43,6 +53,8 @@ border-radius:40px;
 overflow:hidden;
 box-shadow:0 20px 60px rgba(0,0,0,.4);
 }
+
+/* HEADER */
 
 header{
 background:#1e2a33;
@@ -59,6 +71,8 @@ display:flex;
 gap:20px;
 align-items:center;
 }
+
+/* GRID BOTONES */
 
 .grid{
 display:grid;
@@ -94,6 +108,8 @@ margin-bottom:10px;
 .orange{background:linear-gradient(#ffa726,#ef6c00);}
 .dark{background:linear-gradient(#546e7a,#37474f);}
 
+/* CONTADOR */
+
 .counter{
 position:absolute;
 top:8px;
@@ -102,6 +118,8 @@ font-size:18px;
 font-weight:bold;
 color:white;
 }
+
+/* PANTALLAS */
 
 .screen{
 display:none;
@@ -116,6 +134,15 @@ text-align:center;
 
 
 <body>
+
+
+<!-- SPLASH -->
+
+<div id="splash">
+<h1>MONOLITO</h1>
+<p>Sistema del Bar · Navia</p>
+</div>
+
 
 <div class="tablet">
 
@@ -137,6 +164,8 @@ text-align:center;
 
 </header>
 
+
+<!-- PANEL PRINCIPAL -->
 
 <div id="panel">
 
@@ -203,23 +232,40 @@ PAGOS
 </div>
 
 
+<!-- PANTALLAS -->
+
 <div id="proveedores" class="screen">PANTALLA PROVEEDORES</div>
+
 <div id="articulos" class="screen">PANTALLA ARTÍCULOS</div>
+
 <div id="comparador" class="screen">COMPARADOR DE PRECIOS</div>
+
 <div id="pedidos" class="screen">GESTIÓN DE PEDIDOS</div>
+
 <div id="revision" class="screen">REVISIÓN DE PEDIDOS</div>
+
 <div id="configuracion" class="screen">CONFIGURACIÓN</div>
+
 <div id="historico" class="screen">HISTÓRICO</div>
+
 <div id="ventas" class="screen">VENTAS DEL BAR</div>
+
 <div id="calendario" class="screen">CALENDARIO / DIARIO DEL BAR</div>
+
 <div id="mensajes" class="screen">COMUNICACIÓN INTERNA</div>
+
 <div id="pagos" class="screen">PAGOS A PROVEEDORES</div>
+
 <div id="incidencias" class="screen">INCIDENCIAS ABIERTAS</div>
+
 <div id="buscar" class="screen">BUSCADOR DEL SISTEMA</div>
+
 <div id="ayuda" class="screen">AYUDA</div>
 
 
 <script>
+
+/* NAVEGACIÓN */
 
 function abrir(p){
 
@@ -243,9 +289,17 @@ document.getElementById("panel").style.display="block"
 
 }
 
+
+/* SPLASH */
+
+window.onload=function(){
+setTimeout(function(){
+document.getElementById("splash").style.display="none"
+},2000)
+}
+
 </script>
 
-</div>
 
 </body>
 
