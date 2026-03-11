@@ -1,120 +1,87 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>MONOLITO</title>
+<title>Monolito</title>
+
+<!-- MODO APP -->
+<meta name="theme-color" content="#1f2c34">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="logo.png">
 
 <style>
 
 body{
 margin:0;
-font-family:Segoe UI,Arial;
-background:#e9e9e9;
+font-family:Segoe UI;
+background:#e6e6e6;
 }
-
-/* HEADER */
 
 header{
-background:#1e2a33;
+background:#1f2c34;
 color:white;
+padding:12px;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:14px 16px;
-font-size:20px;
+justify-content:space-between;
+font-size:18px;
 }
 
-.header-icons{
-display:flex;
-gap:16px;
-font-size:22px;
+.header-icons span{
+margin-left:18px;
+font-size:20px;
 cursor:pointer;
 }
-
-/* GRID */
 
 .grid{
 display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:16px;
-padding:16px;
+padding:18px;
 }
-
-/* móvil */
-
-@media (max-width:700px){
-
-.grid{
-grid-template-columns:1fr 1fr;
-}
-
-}
-
-/* tablet */
-
-@media (min-width:701px){
-
-.grid{
-grid-template-columns:1fr 1fr 1fr;
-max-width:900px;
-margin:auto;
-}
-
-}
-
-/* BOTONES */
 
 .btn{
-
-background:#6f7c86;
-height:130px;
-border-radius:12px;
+background:#6e7b83;
+color:white;
+border-radius:16px;
+height:110px;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
-color:white;
-font-weight:bold;
-box-shadow:0 6px 12px rgba(0,0,0,.2);
+justify-content:center;
+font-weight:600;
+font-size:15px;
+box-shadow:0 6px 14px rgba(0,0,0,0.25);
 position:relative;
-cursor:pointer;
-
 }
 
-.btn span{
+.blue{background:#5b86b3;}
+.green{background:#6aa84f;}
+.orange{background:#f39c12;}
+.dark{background:#455a64;}
 
+.icon{
 font-size:34px;
-margin-bottom:8px;
-
+margin-bottom:6px;
 }
-
-/* COLORES */
-
-.blue{background:#5a88b5;}
-.orange{background:#f18700;}
-.green{background:#5da649;}
-.dark{background:#4f5f68;}
-
-/* contador comunicaciones */
 
 .badge{
-
 position:absolute;
 top:8px;
 right:10px;
 background:white;
-color:#f18700;
-font-weight:bold;
-border-radius:50%;
+color:#f39c12;
 width:26px;
 height:26px;
+border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:14px;
-
+font-weight:bold;
 }
 
 </style>
@@ -125,82 +92,43 @@ font-size:14px;
 
 <header>
 
-<div>MONOLITO</div>
+<div><b>MONOLITO</b></div>
 
 <div class="header-icons">
-
-<div>⚠</div>
-<div>🔍</div>
-<div>❓</div>
-<div>↩</div>
-
+<span>⚠️</span>
+<span>🔍</span>
+<span>❓</span>
+<span>↩</span>
 </div>
 
 </header>
 
-
 <div class="grid">
 
-<div class="btn blue">
-<span>🚚</span>
-PROVEEDORES
-</div>
+<div class="btn blue"><div class="icon">🚚</div>PROVEEDORES</div>
+<div class="btn"><div class="icon">📋</div>ARTÍCULOS</div>
+<div class="btn"><div class="icon">📊</div>COMPARADOR</div>
 
-<div class="btn">
-<span>📋</span>
-ARTÍCULOS
-</div>
+<div class="btn blue"><div class="icon">📝</div>PEDIDOS</div>
+<div class="btn orange"><div class="icon">🔎</div>REVISIÓN</div>
+<div class="btn"><div class="icon">⚙️</div>CONFIGURACIÓN</div>
 
-<div class="btn">
-<span>📊</span>
-COMPARADOR
-</div>
-
-<div class="btn blue">
-<span>📝</span>
-PEDIDOS
-</div>
+<div class="btn green"><div class="icon">📂</div>HISTÓRICO</div>
+<div class="btn"><div class="icon">💰</div>VENTAS</div>
+<div class="btn"><div class="icon">📅</div>CALENDARIO</div>
 
 <div class="btn orange">
-<span>🔍</span>
-REVISIÓN
-</div>
-
-<div class="btn">
-<span>⚙</span>
-CONFIGURACIÓN
-</div>
-
-<div class="btn green">
-<span>📂</span>
-HISTÓRICO
-</div>
-
-<div class="btn">
-<span>💰</span>
-VENTAS
-</div>
-
-<div class="btn">
-<span>📅</span>
-CALENDARIO
-</div>
-
-<div class="btn orange">
-
 <div class="badge">3</div>
-
-<span>✉</span>
+<div class="icon">✉️</div>
 COMUNICACIÓN
-
 </div>
 
-<div class="btn dark">
-<span>💳</span>
-PAGOS
-</div>
+<div class="btn dark"><div class="icon">💳</div>PAGOS</div>
 
 </div>
 
 </body>
 </html>
+
+
+
