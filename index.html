@@ -1,94 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MONOLITO</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Segoe UI;
 background:#e6e6e6;
+font-family:Segoe UI;
 }
 
-.topbar{
+/* CABECERA */
+
+.top{
 background:#1f2c34;
 color:white;
-padding:14px;
+padding:18px;
+font-size:26px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-font-size:18px;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
 }
 
-.iconos{
-display:flex;
-gap:18px;
-font-size:20px;
+.icons{
+font-size:22px;
+letter-spacing:8px;
 }
 
-.grid{
-padding:16px;
+/* GRID */
+
+.panel{
+padding:20px;
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
+
+/* BOTONES */
 
 .btn{
 height:120px;
-border-radius:18px;
+border-radius:20px;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-color:white;
-font-weight:600;
 font-size:18px;
-box-shadow:0 6px 14px rgba(0,0,0,0.25);
-position:relative;
+color:white;
+cursor:pointer;
+transition:0.25s;
+box-shadow:
+0 8px 18px rgba(0,0,0,0.25),
+inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
-.azul{background:linear-gradient(#5d8db8,#3e6f99);}
+.btn:active{
+transform:scale(0.97);
+box-shadow:0 3px 8px rgba(0,0,0,0.3);
+}
+
+.azul{background:linear-gradient(#5f8fb8,#3d6f9a);}
 .gris{background:linear-gradient(#7c8b92,#5f6d73);}
-.verde{background:linear-gradient(#6aa84f,#4e7d36);}
-.naranja{background:linear-gradient(#f6a623,#d98200);}
-.oscuro{background:linear-gradient(#546e7a,#37474f);}
+.naranja{background:linear-gradient(#f5a623,#d97d00);}
+.verde{background:linear-gradient(#6ab04c,#4b8b32);}
+.oscuro{background:linear-gradient(#556b75,#394b52);}
 
 .icono{
-font-size:34px;
+font-size:32px;
 margin-bottom:8px;
 }
 
+/* CONTADOR */
+
 .badge{
 position:absolute;
-top:10px;
-right:12px;
+margin-top:-85px;
+margin-left:80px;
 background:white;
-color:#d98200;
+color:#d97d00;
 width:28px;
 height:28px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-weight:700;
+font-size:14px;
+font-weight:bold;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+.panel{
+grid-template-columns:repeat(2,1fr);
+}
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="topbar">
-<div>MONOLITO</div>
-<div class="iconos">
+<div class="top">
+MONOLITO
+<div class="icons">
 ⚠️ 🔎 ❓ ↩️
 </div>
 </div>
 
-<div class="grid">
+<div class="panel">
 
 <div class="btn azul">
 <div class="icono">🚚</div>
@@ -121,7 +148,7 @@ CONFIGURACIÓN
 </div>
 
 <div class="btn verde">
-<div class="icono">📂</div>
+<div class="icono">📁</div>
 HISTÓRICO
 </div>
 
@@ -135,10 +162,12 @@ VENTAS
 CALENDARIO
 </div>
 
+<div style="position:relative">
 <div class="btn naranja">
-<div class="badge">3</div>
 <div class="icono">✉️</div>
 COMUNICACIÓN
+</div>
+<div class="badge">3</div>
 </div>
 
 <div class="btn oscuro">
@@ -150,4 +179,3 @@ PAGOS
 
 </body>
 </html>
-
