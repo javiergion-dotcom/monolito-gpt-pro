@@ -2,8 +2,11 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>MONOLITO – Sistema del Bar</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MONOLITO</title>
+
+<link rel="manifest" href="manifest.json">
 
 <style>
 
@@ -13,142 +16,77 @@ font-family:Arial, Helvetica, sans-serif;
 background:#e9ecef;
 }
 
-.topbar{
+.header{
 background:#111;
 color:white;
-padding:18px;
+padding:16px;
 text-align:center;
 font-size:22px;
 font-weight:bold;
-letter-spacing:1px;
-box-shadow:0 3px 10px rgba(0,0,0,0.4);
 }
 
-.panel{
-max-width:1000px;
-margin:30px auto;
+.grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:20px;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:18px;
+padding:18px;
 }
 
 .boton{
-background:linear-gradient(#5f6b75,#3f4850);
-border-radius:14px;
-height:120px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+background:linear-gradient(#4a90e2,#2f6fb5);
+border-radius:18px;
 color:white;
-font-size:20px;
+font-size:18px;
 font-weight:bold;
-cursor:pointer;
-box-shadow:0 10px 20px rgba(0,0,0,0.25);
-transition:0.15s;
-text-decoration:none;
-}
-
-.boton span{
-font-size:44px;
-margin-bottom:8px;
+text-align:center;
+padding:28px 10px;
+box-shadow:0 6px 0 #1d4e82;
+transition:0.1s;
 }
 
 .boton:active{
-transform:scale(0.95);
-box-shadow:0 3px 8px rgba(0,0,0,0.5);
+transform:translateY(4px);
+box-shadow:0 2px 0 #1d4e82;
 }
 
-.azul{background:linear-gradient(#5d9be0,#3c7ec4);}
-.verde{background:linear-gradient(#73c15c,#4ea63c);}
-.naranja{background:linear-gradient(#f3a14a,#e8892b);}
-.gris{background:linear-gradient(#7b858d,#5d666d);}
-
-.footer{
-text-align:center;
-margin-top:20px;
-color:#666;
-font-size:14px;
+.icono{
+font-size:34px;
+display:block;
+margin-bottom:8px;
 }
 
 </style>
-
-<script>
-function vibrar(){
-if(navigator.vibrate){
-navigator.vibrate(60);
-}
-}
-
-function ir(url){
-vibrar();
-setTimeout(()=>{
-window.location=url;
-},120);
-}
-</script>
-
 </head>
 
 <body>
 
-<div class="topbar">
-MONOLITO – Sistema del Bar
+<div class="header">
+MONOLITO GPT PRO
 </div>
 
-<div class="panel">
+<div class="grid">
 
-<div class="boton azul" onclick="ir('proveedores.html')">
-<span>🚚</span>
-PROVEEDORES
-</div>
+<div class="boton"><span class="icono">📦</span>PROVEEDORES</div>
+<div class="boton"><span class="icono">🍺</span>ARTÍCULOS</div>
+<div class="boton"><span class="icono">📝</span>PEDIDOS</div>
 
-<div class="boton gris" onclick="ir('articulos.html')">
-<span>🍺</span>
-ARTÍCULOS
-</div>
+<div class="boton"><span class="icono">💳</span>PAGOS</div>
+<div class="boton"><span class="icono">⚠</span>INCIDENCIAS</div>
+<div class="boton"><span class="icono">📊</span>COMPARADOR</div>
 
-<div class="boton naranja" onclick="ir('pedidos.html')">
-<span>📝</span>
-PEDIDOS
-</div>
-
-<div class="boton verde" onclick="ir('pagos.html')">
-<span>💳</span>
-PAGOS
-</div>
-
-<div class="boton azul" onclick="ir('incidencias.html')">
-<span>⚠️</span>
-INCIDENCIAS
-</div>
-
-<div class="boton gris" onclick="ir('comparador.html')">
-<span>📊</span>
-COMPARADOR
-</div>
-
-<div class="boton naranja" onclick="ir('calendario.html')">
-<span>📅</span>
-CALENDARIO
-</div>
-
-<div class="boton verde" onclick="ir('avisos.html')">
-<span>🔔</span>
-AVISOS
-</div>
-
-<div class="boton gris" onclick="ir('configuracion.html')">
-<span>⚙️</span>
-CONFIGURACIÓN
-</div>
+<div class="boton"><span class="icono">📅</span>CALENDARIO</div>
+<div class="boton"><span class="icono">🔔</span>AVISOS</div>
+<div class="boton"><span class="icono">⚙</span>CONFIG</div>
 
 </div>
 
-<div class="footer">
-Monolito GPT Pro – Control real del bar
-</div>
+<script>
+if ("vibrate" in navigator) {
+document.querySelectorAll(".boton").forEach(b=>{
+b.addEventListener("click",()=>navigator.vibrate(40))
+})
+}
+</script>
 
 </body>
 </html>
