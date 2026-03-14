@@ -20,21 +20,26 @@ padding:18px;
 text-align:center;
 font-size:24px;
 font-weight:bold;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-/* 📱 MOVIL */
+/* BOTONES SUPERIORES */
+
+.top-btn{
+background:#444;
+color:white;
+padding:8px 14px;
+border-radius:8px;
+font-size:14px;
+}
+
 .grid{
 display:grid;
-grid-template-columns:1fr;
+grid-template-columns:repeat(3,1fr);   /* 🔥 FORZADO 3 COLUMNAS */
 gap:18px;
 padding:18px;
-}
-
-/* 📲 TABLET */
-@media (min-width:700px){
-.grid{
-grid-template-columns:repeat(3,1fr);
-}
 }
 
 .boton{
@@ -43,7 +48,7 @@ color:white;
 font-size:20px;
 font-weight:bold;
 text-align:center;
-padding:40px 10px;
+padding:35px 10px;
 box-shadow:0 8px 0 rgba(0,0,0,0.35);
 transition:0.12s;
 }
@@ -54,7 +59,7 @@ box-shadow:0 2px 0 rgba(0,0,0,0.35);
 }
 
 .icono{
-font-size:70px;
+font-size:60px;
 display:block;
 margin-bottom:10px;
 }
@@ -70,7 +75,9 @@ margin-bottom:10px;
 <body>
 
 <div class="header">
-MONOLITO GPT PRO
+<div class="top-btn">← Volver</div>
+<div>MONOLITO</div>
+<div class="top-btn">Ayuda</div>
 </div>
 
 <div class="grid">
