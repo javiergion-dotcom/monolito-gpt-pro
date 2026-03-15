@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MONOLITO – Sistema del Bar</title>
 
-<title>MONOLITO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="icono.png">
+<link rel="apple-touch-icon" href="icono.png">
 
 <style>
 
 body{
+font-family:Arial;
+background:#f2f2f2;
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#dcdcdc;
 }
-
-/* CABECERA */
 
 .header{
 background:#111;
@@ -23,64 +27,44 @@ padding:14px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-font-size:22px;
+font-size:20px;
+font-weight:bold;
 }
 
-.header button{
+.btnTop{
 background:#444;
 color:white;
-border:none;
-padding:8px 14px;
-border-radius:8px;
-font-size:16px;
+padding:10px 14px;
+border-radius:10px;
+text-decoration:none;
 }
-
-/* BARRA ESTADO */
-
-.status{
-background:#eeeeee;
-text-align:center;
-padding:6px;
-font-size:14px;
-color:#333;
-}
-
-/* GRID */
 
 .grid{
+padding:18px;
 display:grid;
-gap:22px;
-padding:22px;
-}
-
-/* MOVIL */
-
-@media (max-width:700px){
-.grid{
 grid-template-columns:1fr;
-}
+gap:18px;
 }
 
-/* TABLET HORIZONTAL */
-
-@media (min-width:701px){
+@media (min-width:900px){
 .grid{
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:1fr 1fr 1fr;
 }
 }
-
-/* BOTONES */
 
 .boton{
-border-radius:26px;
-padding:34px;
-text-align:center;
-font-size:26px;
-color:white;
+height:140px;
+border-radius:24px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-size:22px;
 font-weight:bold;
+color:white;
 box-shadow:0 12px 0 rgba(0,0,0,0.25);
-transition:0.15s;
-user-select:none;
+transition:0.1s;
+text-decoration:none;
 }
 
 .boton:active{
@@ -88,26 +72,15 @@ transform:translateY(6px);
 box-shadow:0 6px 0 rgba(0,0,0,0.25);
 }
 
-/* COLORES */
-
-.azul{background:linear-gradient(#4e86c9,#3c6fa8);}
-.gris{background:linear-gradient(#70777d,#575e63);}
-.verde{background:linear-gradient(#6cc05c,#4f9e41);}
-.naranja{background:linear-gradient(#f09a3a,#d87e1f);}
-
-/* ICONO */
-
 .icono{
-font-size:64px;
-margin-bottom:12px;
+font-size:52px;
+margin-bottom:6px;
 }
 
-.footer{
-text-align:center;
-color:#666;
-padding:18px;
-font-size:14px;
-}
+.azul{background:#4a86c5;}
+.gris{background:#6b6f73;}
+.verde{background:#5cab4b;}
+.naranja{background:#e38b2c;}
 
 </style>
 </head>
@@ -115,103 +88,66 @@ font-size:14px;
 <body>
 
 <div class="header">
-<button onclick="history.back()">← Volver</button>
+<a class="btnTop" href="#">← Volver</a>
 <div>MONOLITO</div>
-<button onclick="alert('Ayuda en desarrollo')">Ayuda</button>
-</div>
-
-<div class="status">
-<span id="fecha"></span> ·
-<span id="hora"></span> ·
-Operador: Javier
+<a class="btnTop" href="#">Ayuda</a>
 </div>
 
 <div class="grid">
 
-<div class="boton azul" onclick="abrir('proveedores.html')">
+<a class="boton azul" href="proveedores.html" onclick="vibra()">
 <div class="icono">📦</div>
 PROVEEDORES
-</div>
+</a>
 
-<div class="boton gris" onclick="abrir('articulos.html')">
+<a class="boton gris" href="articulos.html" onclick="vibra()">
 <div class="icono">🍺</div>
 ARTÍCULOS
-</div>
+</a>
 
-<div class="boton naranja" onclick="abrir('pedidos.html')">
+<a class="boton naranja" href="pedidos.html" onclick="vibra()">
 <div class="icono">📝</div>
 PEDIDOS
-</div>
+</a>
 
-<div class="boton verde" onclick="abrir('pagos.html')">
+<a class="boton verde" href="pagos.html" onclick="vibra()">
 <div class="icono">💳</div>
 PAGOS
-</div>
+</a>
 
-<div class="boton gris" onclick="abrir('incidencias.html')">
+<a class="boton gris" href="incidencias.html" onclick="vibra()">
 <div class="icono">⚠️</div>
 INCIDENCIAS
-</div>
+</a>
 
-<div class="boton azul" onclick="abrir('comparador.html')">
+<a class="boton azul" href="comparador.html" onclick="vibra()">
 <div class="icono">📊</div>
 COMPARADOR
-</div>
+</a>
 
-<div class="boton naranja" onclick="abrir('calendario.html')">
+<a class="boton naranja" href="calendario.html" onclick="vibra()">
 <div class="icono">📅</div>
 CALENDARIO
-</div>
+</a>
 
-<div class="boton verde" onclick="abrir('avisos.html')">
+<a class="boton verde" href="mensajes.html" onclick="vibra()">
 <div class="icono">✉️</div>
 MENSAJES
-</div>
+</a>
 
-<div class="boton gris" onclick="abrir('configuracion.html')">
+<a class="boton gris" href="configuracion.html" onclick="vibra()">
 <div class="icono">⚙️</div>
 CONFIGURACIÓN
-</div>
+</a>
 
-</div>
-
-<div class="footer">
-Monolito GPT Pro — Control real del bar
 </div>
 
 <script>
-
-function abrir(p){
-vibrar()
-setTimeout(()=>{
-window.location=p
-},120)
-}
-
-function vibrar(){
+function vibra(){
 if(navigator.vibrate){
-navigator.vibrate(60)
+navigator.vibrate(60);
 }
 }
-
-function reloj(){
-
-const ahora = new Date()
-
-const dias = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"]
-const meses = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"]
-
-document.getElementById("fecha").innerHTML =
-dias[ahora.getDay()]+" "+ahora.getDate()+" "+meses[ahora.getMonth()]
-
-document.getElementById("hora").innerHTML =
-ahora.toLocaleTimeString()
-
-}
-
-setInterval(reloj,1000)
-reloj()
-
 </script>
 
 </body>
