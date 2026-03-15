@@ -12,67 +12,70 @@ margin:0;
 font-family:Arial,Helvetica,sans-serif;
 background:#111;
 color:white;
+text-align:center;
+}
+
+section{
+padding:60px 20px;
 }
 
 .hero{
 height:100vh;
+background:url("navia.jpg") center/cover no-repeat;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
-padding:20px;
-background:
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-radial-gradient(circle at center,#2a2a2a,#000);
+background-blend-mode:overlay;
+background-color:#0008;
 }
 
 h1{
-font-size:54px;
+font-size:48px;
 letter-spacing:4px;
 margin:0;
 }
 
 h2{
-font-weight:normal;
+color:#ff9d2f;
+font-weight:300;
 margin-top:10px;
-color:#e8892b;
-}
-
-.desc{
-margin-top:40px;
-max-width:700px;
-line-height:1.6;
-font-size:20px;
-color:#ddd;
-}
-
-.grid{
-margin-top:60px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-width:100%;
-max-width:900px;
 }
 
 .card{
-background:#1d1d1d;
+background:#1c1c1c;
+margin:30px auto;
 padding:30px;
-border-radius:14px;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+border-radius:20px;
+max-width:500px;
+box-shadow:0 10px 30px #000;
 }
 
-.icon{
-font-size:42px;
-margin-bottom:12px;
+.card img{
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
 }
 
-.footer{
-position:absolute;
-bottom:20px;
+.mahou{
+background:#000;
+padding:80px 20px;
+}
+
+.mahou h3{
+font-size:34px;
+color:#ff3c3c;
+letter-spacing:3px;
+}
+
+.historia{
+background:#181818;
+}
+
+footer{
+padding:40px;
 font-size:14px;
-color:#777;
+opacity:0.6;
 }
 
 </style>
@@ -80,43 +83,54 @@ color:#777;
 
 <body>
 
-<div class="hero">
-
+<section class="hero">
 <h1>EL MONOLITO</h1>
 <h2>NAVIA</h2>
+<p>Café ecológico · Mahou 5 Estrellas · Ambiente joven</p>
+</section>
 
-<div class="desc">
-Café ecológico Candelas · Mahou 5 Estrellas ·  
-Ambiente tranquilo y público joven.  
-Especialistas en cafés y punto de encuentro diario.
-</div>
-
-<div class="grid">
-
+<section>
 <div class="card">
-<div class="icon">☕</div>
-Cafés especiales ecológicos
+<img src="cafe1.jpg">
+<h3>Cafés especiales ecológicos</h3>
+<p>Especialistas en café y punto de encuentro diario.</p>
 </div>
+</section>
 
+<section>
 <div class="card">
-<div class="icon">🍺</div>
-Mahou 5 Estrellas  
-y próxima novedad Mahou Bodega
+<img src="matcha.jpg">
+<h3>Matcha Latte Candelas</h3>
+<p>Producto ecológico seleccionado.</p>
 </div>
+</section>
 
+<section class="mahou">
+<h3>GRAN NOVEDAD</h3>
+<p>Llega Mahou Bodega a EL MONOLITO</p>
+<img src="mahou.jpg" style="max-width:600px;width:90%;border-radius:20px;">
+<p>Una nueva experiencia cervecera en Navia.</p>
+</section>
+
+<section class="historia">
 <div class="card">
-<div class="icon">✨</div>
-Ambiente relajado  
-y muy bien valorado
+<img src="fachada.jpg">
+<h3>Nuestra historia</h3>
+<p>Nacimos con la idea de crear un espacio referente en la hostelería de Navia.</p>
 </div>
+</section>
 
+<section>
+<div class="card">
+<img src="interior.jpg">
+<h3>Ambiente tranquilo</h3>
+<p>Un lugar para disfrutar con calma.</p>
 </div>
+</section>
 
-<div class="footer">
+<footer>
 EL MONOLITO · Navia
-</div>
-
-</div>
+</footer>
 
 </body>
 </html>
