@@ -3,17 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MONOLITO</title>
+
+<title>MONOLITO – Sistema del Bar</title>
 
 <style>
 
 body{
-margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#e6e6e6;
-height:100vh;
-display:flex;
-flex-direction:column;
+background:#f2f2f2;
+margin:0;
 }
 
 /* BARRA SUPERIOR */
@@ -22,63 +20,80 @@ flex-direction:column;
 background:#111;
 color:white;
 padding:16px;
-font-size:24px;
+font-size:22px;
 font-weight:bold;
-display:flex;
-justify-content:space-between;
-align-items:center;
+text-align:center;
+position:sticky;
+top:0;
 }
 
-.topbtn{
-background:#444;
-padding:8px 14px;
-border-radius:8px;
-font-size:14px;
-}
+/* CONTENEDOR */
 
-/* GRID */
-
-.grid{
-flex:1;
+.container{
 display:grid;
+grid-template-columns:1fr;
+gap:22px;
+padding:18px;
+max-width:1100px;
+margin:auto;
+}
+
+/* móvil horizontal */
+@media (min-width:600px){
+.container{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+/* tablet */
+@media (min-width:900px){
+.container{
 grid-template-columns:repeat(3,1fr);
-grid-template-rows:repeat(3,1fr);
-gap:14px;
-padding:14px;
+}
 }
 
 /* BOTONES */
 
 .boton{
-border-radius:24px;
+height:150px;
+border-radius:26px;
 color:white;
-font-size:22px;
 font-weight:bold;
+font-size:20px;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
-box-shadow:0 10px 0 rgba(0,0,0,0.35);
-transition:0.12s;
+justify-content:center;
 text-decoration:none;
+box-shadow:0 10px 20px rgba(0,0,0,0.25);
+transition:0.15s;
 }
 
 .boton:active{
-transform:translateY(7px);
-box-shadow:0 3px 0 rgba(0,0,0,0.35);
-}
-
-.icono{
-font-size:70px;
-margin-bottom:10px;
+transform:scale(0.95);
 }
 
 /* COLORES */
 
-.azul{background:linear-gradient(#4a90e2,#2f6fb5);}
-.gris{background:linear-gradient(#7a7a7a,#505050);}
-.naranja{background:linear-gradient(#f29c1f,#d97800);}
-.verde{background:linear-gradient(#69b34c,#3e8e2f);}
+.azul{background:#3c7ec4;}
+.gris{background:#5f676e;}
+.verde{background:#5cab4b;}
+.naranja{background:#e8892b;}
+
+/* ICONOS */
+
+.icono{
+font-size:48px;
+margin-bottom:10px;
+}
+
+/* PIE */
+
+.footer{
+text-align:center;
+color:#777;
+margin:30px;
+}
 
 </style>
 </head>
@@ -86,34 +101,61 @@ margin-bottom:10px;
 <body>
 
 <div class="header">
-<div class="topbtn">← Volver</div>
-<div>MONOLITO</div>
-<div class="topbtn">Ayuda</div>
+MONOLITO
 </div>
 
-<div class="grid">
+<div class="container">
 
-<a href="proveedores.html" class="boton azul"><div class="icono">📦</div>PROVEEDORES</a>
-<a href="articulos.html" class="boton gris"><div class="icono">🍺</div>ARTÍCULOS</a>
-<a href="pedidos.html" class="boton naranja"><div class="icono">📝</div>PEDIDOS</a>
+<a href="proveedores.html" class="boton azul">
+<div class="icono">📦</div>
+PROVEEDORES
+</a>
 
-<a href="pagos.html" class="boton verde"><div class="icono">💳</div>PAGOS</a>
-<a href="incidencias.html" class="boton gris"><div class="icono">⚠️</div>INCIDENCIAS</a>
-<a href="comparador.html" class="boton azul"><div class="icono">📊</div>COMPARADOR</a>
+<a href="articulos.html" class="boton gris">
+<div class="icono">🍺</div>
+ARTÍCULOS
+</a>
 
-<a href="calendario.html" class="boton naranja"><div class="icono">📅</div>CALENDARIO</a>
-<a href="avisos.html" class="boton gris"><div class="icono">✉️</div>MENSAJES</a>
-<a href="configuracion.html" class="boton azul"><div class="icono">⚙️</div>CONFIG</a>
+<a href="pedidos.html" class="boton naranja">
+<div class="icono">📝</div>
+PEDIDOS
+</a>
+
+<a href="pagos.html" class="boton verde">
+<div class="icono">💳</div>
+PAGOS
+</a>
+
+<a href="incidencias.html" class="boton gris">
+<div class="icono">⚠️</div>
+INCIDENCIAS
+</a>
+
+<a href="comparador.html" class="boton azul">
+<div class="icono">📊</div>
+COMPARADOR
+</a>
+
+<a href="calendario.html" class="boton naranja">
+<div class="icono">📅</div>
+CALENDARIO
+</a>
+
+<a href="avisos.html" class="boton gris">
+<div class="icono">✉️</div>
+MENSAJES
+</a>
+
+<a href="configuracion.html" class="boton gris">
+<div class="icono">⚙️</div>
+CONFIGURACIÓN
+</a>
 
 </div>
 
-<script>
-if ("vibrate" in navigator) {
-document.querySelectorAll(".boton").forEach(b=>{
-b.addEventListener("click",()=>navigator.vibrate(40))
-})
-}
-</script>
+<div class="footer">
+Monolito GPT Pro – Control real del bar
+</div>
 
 </body>
 </html>
